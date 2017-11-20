@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hints>
+	<mode name="normal">
+		<id name="xxx" enable="1">
+			<boost name="yyy" args="zzzz=0 kkkk=1560000" />
+			<boost name="kkkk" />
+		</id>
+	</mode>
+</hints>
