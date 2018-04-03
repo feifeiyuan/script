@@ -54,6 +54,8 @@ function get_input_data {
 			break
 		fi
 	done
+	
+	#等号两边一定需要空格
 	if [ ${input_aval_flag} != 1 ] ; then
 		echo "you do not input correct data"
 		show_note
