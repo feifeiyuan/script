@@ -1,4 +1,12 @@
 #!/bin/sh
+
+function show_note {
+	echo "if you have any questions Please read readme(In the same directory) Priority!!!"
+	echo "exit ...."
+	# exit 直接退出脚本程序
+	exit
+}
+
 function enter_diff_dir {
 	# -d表示目录是否存在
 	if [ -d "dic1" ] ; then
@@ -9,10 +17,7 @@ function enter_diff_dir {
 		cd /dic3/drivers/platform:mali/*.file3/devfreq/*.file3/
 	else
 		echo "we do not find correct path for *** info"
-		echo "if you have any questions Please read readme(In the same directory) Priority!!!"
-		echo "exit ...."
-		# exit 直接退出脚本程序
-		exit
+		show_note
 	fi
 }
 
@@ -30,9 +35,7 @@ function cal_aval_data {
 		done
 	else
 		echo "we do not find node1 node"
-		echo "if you have any questions Please read readme(In the same directory) Priority!!!"
-		echo "exit ...."
-		exit
+		show_note
 	fi
 
 }
@@ -53,9 +56,7 @@ function get_input_data {
 	done
 	if [ ${input_aval_flag} != 1 ] ; then
 		echo "you do not input correct data"
-		echo "if you have any questions Please read readme(In the same directory) Priority!!!"
-		echo "exit ...."
-		exit
+		show_note
 	fi
 }
 
@@ -72,9 +73,7 @@ function set_correct_data {
 		fi
 	else
 		echo "we do not find min or max node"
-		echo "if you have any questions Please read readme(In the same directory) Priority!!!"
-		echo "exit ...."
-		exit
+		show_note
 	fi
 }
 
@@ -84,9 +83,7 @@ function get_cur_data {
 		cat node2
 	else
 		echo "we do not find node2 node"
-		echo "if you have any questions Please read readme(In the same directory) Priority!!!"
-		echo "exit ...."
-		exit
+		show_note
 	fi
 }
 
