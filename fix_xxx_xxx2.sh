@@ -19,6 +19,7 @@ function enter_cpu_dir {
 function get_aval_freq {
 	if [ -e "$1" ] ; then
 		local cpu_freq=`cat $1`
+		#对于for循环中使用的x请优先申明为local，否则容易导致全局变量重名
 		local x=0
 		if [ "$2" == "cpu0" ] ; then
 			cpu0_freq_arry=($cpu_freq)
