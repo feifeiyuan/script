@@ -1,3 +1,4 @@
+#该基本基于CPU最多分为两个cluster，其中cpu0属于cluster1，cpu4属于cluster2
 #!/bin/sh
 
 function show_exit_note {
@@ -86,6 +87,7 @@ function set_fix_freq {
 	get_aval_freq ${1}"/cpufreq/scaling_available_frequencies" ${1}
 	determine_exit ${1}"/cpufreq/scaling_governor"
 	
+	#切换策略为userspace
 	echo userspace >${1}"/cpufreq/scaling_governor"
 	
 	echo -n "Please select freq:"
