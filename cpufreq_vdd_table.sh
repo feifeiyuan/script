@@ -55,6 +55,7 @@ function cpuidle_state {
 }
 
 function look_freq_vdd {
+	#不同的平台具有不同的节点
 	local vdd_node=0
 	if [ "$1" = "0" ] ; then
 		if [ -e "/sys/kernel/debug/sprd-regulator/vddarm0/voltage" ] ; then
