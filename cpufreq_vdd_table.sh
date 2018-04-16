@@ -60,10 +60,14 @@ function look_freq_vdd {
 	if [ "$1" = "0" ] ; then
 		if [ -e "/sys/kernel/debug/sprd-regulator/vddarm0/voltage" ] ; then
 			vdd_node="/sys/kernel/debug/sprd-regulator/vddarm0/voltage"
+		elif [ -e "/sys/kernel/debug/sprd-regulator/vddcpu/voltage" ] ; then
+			vdd_node="/sys/kernel/debug/sprd-regulator/vddcpu/voltage"
 		fi
 	elif [ "$1" = "4" ] ; then
 		if [ -e "/sys/kernel/debug/sprd-regulator/vddarm1/voltage" ] ; then
 			vdd_node="/sys/kernel/debug/sprd-regulator/vddarm1/voltage"
+		elif [ -e "/sys/kernel/debug/sprd-regulator/vddcpu/voltage" ] ; then
+			vdd_node="/sys/kernel/debug/sprd-regulator/vddcpu/voltage"
 		fi
 	fi
 
