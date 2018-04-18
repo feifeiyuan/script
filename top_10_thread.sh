@@ -30,7 +30,7 @@ function del_file {
 	fi
 }
 
-function cal_top_thread_end {
+function cal_top_thread {
 	echo "\nthread_cpu load(top):" 
 	local time=10
 	local i=0
@@ -72,4 +72,4 @@ function cal_top_thread_end {
 	
 }
 
-cal_top_thread_end
+cal_top_thread
