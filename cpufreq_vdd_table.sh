@@ -6,7 +6,7 @@ function show_exit_note {
 	exit
 }
 
-function determine_exit {
+function determine_exit () {
 	if [ ! -e $1 ] ; then
 		echo "we do not find correct node: "$1
 		show_exit_note
@@ -55,13 +55,16 @@ function cpuidle_state {
 }
 
 function look_freq_vdd {
-	#不同的平台具有不同的节点
+	# 不同的平台具有不同的节点
+	# 实际上这个是需要spec来定的
 	local vdd_node=0
 	if [ "$1" = "0" ] ; then
 		if [ -e "/sys/kernel/debug/sprd-regulator/vddarm0/voltage" ] ; then
 			vdd_node="/sys/kernel/debug/sprd-regulator/vddarm0/voltage"
 		elif [ -e "/sys/kernel/debug/sprd-regulator/vddcpu/voltage" ] ; then
 			vdd_node="/sys/kernel/debug/sprd-regulator/vddcpu/voltage"
+		elif [ -e "/sys/kernel/debug/sprd-regulator/vddcore/voltage" ] ; then
+			vdd_node="/sys/kernel/debug/sprd-regulator/vddcore/voltage"
 		fi
 	elif [ "$1" = "4" ] ; then
 		if [ -e "/sys/kernel/debug/sprd-regulator/vddarm1/voltage" ] ; then
