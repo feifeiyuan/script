@@ -18,7 +18,7 @@ function show_brightness {
 	# shell脚本中执行死循环
 	while (( 1 ))
 	do
-		# sleep 1是以1秒为单位，可以设置0.5
+		# sleep 1是以1秒为单位，可以设置0.5s
 		sleep 1
 		determine_exit "/sys/class/backlight/sprd_backlight/brightness"
 		local brightness=`cat /sys/class/backlight/sprd_backlight/brightness`
