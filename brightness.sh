@@ -1,4 +1,3 @@
-#背光节点
 #!/usr/bin/bash
 
 function show_exit_note {
