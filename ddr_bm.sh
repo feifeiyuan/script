@@ -57,13 +57,13 @@ function close_thermal_IPA()
 
 function set_ddr_mode {
 	set_test_time
-#设置了/sys/bus/platform/devices/*.ptm/misc/sprd_ptm/mode为legacy模式之后
+#设置了/sys/bus/platform/devices/*.ptm/misc/***/mode为legacy模式之后
 #在mnt/obb下面会产生对应的log文件，解析log文件使用的是C程序
 	if [ -e "/mnt/obb/axi_per_log" ] ; then
 		#清空原有的log文件
 		rm /mnt/obb/axi_per_log
 	fi
-	cd /sys/bus/platform/devices/*.ptm/misc/sprd_ptm/
+	cd /sys/bus/platform/devices/*.ptm/misc/***/
 	#这里为什么要写一个循环呢？
 	#第一次开机时mode为initial，直接更改为legacy就会动态生成bandwidth文件(类似第一次打开了一个开关)，后续直接将监控关掉
 	if [ ! -e "bandwidth" ] ; then
